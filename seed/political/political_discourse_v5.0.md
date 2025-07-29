@@ -60,7 +60,7 @@ Civic attachment to political institutions and constitutional values. This repre
   "analysis_variants": {
     "default": {
       "description": "Complete two-axis analysis with embedded CSV output.",
-      "analysis_prompt": "Phase 1: Cognitive Priming: You are an expert analyst of political discourse. Phase 2: Framework Methodology: Your task is to analyze the text using the Political Discourse Two-Axis Analysis v5.0. Phase 3: Operational Definitions: Evaluate two orthogonal axes: Populism vs. Pluralism (vertical) and Nationalism vs. Patriotism (horizontal). Phase 4: Scoring Protocol: Score each axis from 0.0 to 1.0. For the vertical axis, 1.0 is pure populism and 0.0 is pure pluralism. For the horizontal axis, 1.0 is pure nationalism and 0.0 is pure patriotism. Provide the strongest 1-2 quotes as evidence for each axis. Phase 5: Embedded CSV Generation: CRITICAL: Your response must include two embedded CSV segments using these exact delimiters: <<<DISCERNUS_SCORES_CSV_v1>>> and <<<DISCERNUS_EVIDENCE_CSV_v1>>>. The scores CSV must have columns for the vertical and horizontal axis scores. The evidence CSV must have columns for axis, quote, and confidence. Phase 6: Output Specification: Return a complete response containing both a comprehensive JSON analysis and the embedded CSV segments as specified in the output_contract."
+      "analysis_prompt": "Phase 1: Cognitive Priming: You are an expert analyst of political discourse. Phase 2: Framework Methodology: Your task is to analyze the text using the Political Discourse Two-Axis Analysis v5.0. Phase 3: Operational Definitions: Evaluate two orthogonal axes: Populism vs. Pluralism (vertical) and Nationalism vs. Patriotism (horizontal). Phase 4: Scoring Protocol: Score each axis from 0.0 to 1.0. For the vertical axis, 1.0 is pure populism and 0.0 is pure pluralism. For the horizontal axis, 1.0 is pure nationalism and 0.0 is pure patriotism. Provide the strongest 1-2 quotes as evidence for each axis. Determine the quadrant classification based on the axis intersection. Phase 5: Framework-Specific CSV Structure: Your scores CSV must contain exactly 4 columns in this order: aid, vertical_axis_score, horizontal_axis_score, quadrant_classification. Your evidence CSV must contain exactly 6 columns: aid, axis, quote_id, quote_text, confidence_score, context_type. Phase 6: Output Specification: Return a complete response containing both a comprehensive JSON analysis AND the embedded CSV segments using the exact delimiters and column structures specified in the output_contract."
     }
   },
   "dimension_groups": {
@@ -91,15 +91,29 @@ Civic attachment to political institutions and constitutional values. This repre
       "scores_csv": {
         "delimiter_start": "<<<DISCERNUS_SCORES_CSV_v1>>>",
         "delimiter_end": "<<<END_DISCERNUS_SCORES_CSV_v1>>>",
-        "description": "CSV for axis scores."
+        "description": "CSV for axis scores and quadrant classification.",
+        "columns": [
+          "aid",
+          "vertical_axis_score",
+          "horizontal_axis_score", 
+          "quadrant_classification"
+        ]
       },
       "evidence_csv": {
         "delimiter_start": "<<<DISCERNUS_EVIDENCE_CSV_v1>>>",
         "delimiter_end": "<<<END_DISCERNUS_EVIDENCE_CSV_v1>>>",
-        "description": "CSV for structured evidence data for audit and replication."
+        "description": "CSV for structured evidence data for audit and replication.",
+        "columns": [
+          "aid",
+          "axis",
+          "quote_id",
+          "quote_text",
+          "confidence_score",
+          "context_type"
+        ]
       }
     },
-    "instructions": "IMPORTANT: Your response MUST include both a complete JSON analysis AND embedded CSV segments using the exact delimiters specified."
+    "instructions": "IMPORTANT: Your response MUST include both a complete JSON analysis AND embedded CSV segments using the exact delimiters specified. The scores CSV must include exactly 4 columns: aid + vertical_axis_score + horizontal_axis_score + quadrant_classification. The evidence CSV must include exactly 6 columns: aid + axis + quote_id + quote_text + confidence_score + context_type."
   }
 }
 ```
