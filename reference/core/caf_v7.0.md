@@ -27,6 +27,16 @@ The analysis focuses on identifying specific textual evidence that demonstrates 
 - Analysis should focus on patterns of civic virtue rather than partisan political positions
 - The framework should be applied consistently regardless of the speaker's political affiliation
 
+## V7.0 Gasket Architecture Integration
+
+**Raw Analysis Log Output**: This framework produces natural, human-readable analytical reports instead of complex JSON structures. The Analysis Agent focuses on intellectual analysis while the Intelligent Extractor handles data extraction.
+
+**Gasket Schema**: The framework includes a complete gasket_schema that maps civic dimensions to flat JSON keys for reliable mathematical processing:
+- Individual virtue scores (dignity_score, truth_score, justice_score, hope_score, pragmatism_score)
+- Counter-virtue scores (tribalism_score, manipulation_score, resentment_score, fear_score, fantasy_score)  
+- Strategic tension calculations (dignity_tribalism_tension, truth_manipulation_tension, etc.)
+- Composite civic character index (civic_character_index)
+
 <details>
 <summary>Technical Specification</summary>
 
