@@ -1,13 +1,13 @@
-# The Nested Nightmare Framework v7.0
+# The Nested Nightmare Framework v7.1
 
-**Version**: 7.0  
+**Version**: 7.1  
 **Status**: Star Wars Bar Exotic Framework  
-**Stress Test Goal**: Deep hierarchical JSON schemas with 5+ levels  
-**Compliance Strategy**: Creative interpretation of gasket architecture  
+**Stress Test Goal**: Deep hierarchical JSON schemas with 5+ levels using Enhanced Gasket Schema
+**Compliance Strategy**: Creative interpretation of gasket architecture with v7.1 metadata scores  
 
 ## Framework Overview
 
-The Nested Nightmare Framework tests the system's ability to handle deeply nested analytical structures while maintaining v7.0 compliance. It analyzes discourse through multiple nested layers of context, creating a hierarchical understanding that challenges standard flat schema assumptions.
+The Nested Nightmare Framework v7.1 tests the system's ability to handle deeply nested analytical structures while maintaining v7.1 compliance with enhanced gasket schema. It analyzes discourse through multiple nested layers of context with metadata scores (salience and confidence), creating a hierarchical understanding that challenges standard flat schema assumptions.
 
 ## Analytical Dimensions
 
@@ -27,15 +27,17 @@ Measures how well nested contexts align:
 - **Horizontal Coherence** (0.0-1.0): Consistency within context levels
 - **Recursive Coherence** (0.0-1.0): Self-referential consistency
 
-## V7.0 Gasket Architecture
+## V7.1 Enhanced Gasket Architecture
 
 ### Raw Analysis Log Format
 The analysis agent outputs a comprehensive contextual analysis containing nested insights across all dimensional layers, with evidence and reasoning for each hierarchical level.
 
-### Gasket Schema (v7.0 Compliant)
+### Enhanced Gasket Schema (v7.1 Compliant)
 ```json
 {
   "gasket_schema": {
+    "version": "7.1",
+    "extraction_method": "intelligent_extractor",
     "target_keys": [
       "surface_context_score",
       "social_context_score", 
@@ -45,6 +47,14 @@ The analysis agent outputs a comprehensive contextual analysis containing nested
       "vertical_coherence_score",
       "horizontal_coherence_score",
       "recursive_coherence_score",
+      "surface_context_salience",
+      "social_context_salience",
+      "historical_context_salience",
+      "systemic_context_salience",
+      "meta_context_salience",
+      "vertical_coherence_salience",
+      "horizontal_coherence_salience",
+      "recursive_coherence_salience",
       "surface_context_confidence",
       "social_context_confidence",
       "historical_context_confidence", 
@@ -54,11 +64,44 @@ The analysis agent outputs a comprehensive contextual analysis containing nested
       "horizontal_coherence_confidence",
       "recursive_coherence_confidence"
     ],
-    "target_dimensions": [
-      "contextual_depth_index",
-      "hierarchical_coherence_index",
-      "nested_complexity_score"
-    ]
+    "extraction_patterns": {
+      "surface_context_score": ["surface.{0,20}context.{0,20}score", "surface.{0,20}score"],
+      "social_context_score": ["social.{0,20}context.{0,20}score", "social.{0,20}score"],
+      "historical_context_score": ["historical.{0,20}context.{0,20}score", "historical.{0,20}score"],
+      "systemic_context_score": ["systemic.{0,20}context.{0,20}score", "systemic.{0,20}score"],
+      "meta_context_score": ["meta.{0,20}context.{0,20}score", "meta.{0,20}score"],
+      "vertical_coherence_score": ["vertical.{0,20}coherence.{0,20}score", "vertical.{0,20}score"],
+      "horizontal_coherence_score": ["horizontal.{0,20}coherence.{0,20}score", "horizontal.{0,20}score"],
+      "recursive_coherence_score": ["recursive.{0,20}coherence.{0,20}score", "recursive.{0,20}score"],
+      "surface_context_salience": ["surface.{0,20}context.{0,20}salience", "surface.{0,20}salience"],
+      "social_context_salience": ["social.{0,20}context.{0,20}salience", "social.{0,20}salience"],
+      "historical_context_salience": ["historical.{0,20}context.{0,20}salience", "historical.{0,20}salience"],
+      "systemic_context_salience": ["systemic.{0,20}context.{0,20}salience", "systemic.{0,20}salience"],
+      "meta_context_salience": ["meta.{0,20}context.{0,20}salience", "meta.{0,20}salience"],
+      "vertical_coherence_salience": ["vertical.{0,20}coherence.{0,20}salience", "vertical.{0,20}salience"],
+      "horizontal_coherence_salience": ["horizontal.{0,20}coherence.{0,20}salience", "horizontal.{0,20}salience"],
+      "recursive_coherence_salience": ["recursive.{0,20}coherence.{0,20}salience", "recursive.{0,20}salience"],
+      "surface_context_confidence": ["surface.{0,20}context.{0,20}confidence", "surface.{0,20}confidence"],
+      "social_context_confidence": ["social.{0,20}context.{0,20}confidence", "social.{0,20}confidence"],
+      "historical_context_confidence": ["historical.{0,20}context.{0,20}confidence", "historical.{0,20}confidence"],
+      "systemic_context_confidence": ["systemic.{0,20}context.{0,20}confidence", "systemic.{0,20}confidence"],
+      "meta_context_confidence": ["meta.{0,20}context.{0,20}confidence", "meta.{0,20}confidence"],
+      "vertical_coherence_confidence": ["vertical.{0,20}coherence.{0,20}confidence", "vertical.{0,20}confidence"],
+      "horizontal_coherence_confidence": ["horizontal.{0,20}coherence.{0,20}confidence", "horizontal.{0,20}confidence"],
+      "recursive_coherence_confidence": ["recursive.{0,20}coherence.{0,20}confidence", "recursive.{0,20}confidence"]
+    },
+    "validation_rules": {
+      "required_fields": [
+        "surface_context_score", "social_context_score", "historical_context_score", "systemic_context_score", "meta_context_score",
+        "vertical_coherence_score", "horizontal_coherence_score", "recursive_coherence_score"
+      ],
+      "score_ranges": {"min": 0.0, "max": 1.0},
+      "metadata_ranges": {
+        "salience": {"min": 0.0, "max": 1.0},
+        "confidence": {"min": 0.0, "max": 1.0}
+      },
+      "fallback_strategy": "use_default_values"
+    }
   }
 }
 ```
@@ -157,10 +200,10 @@ You are an expert analyst of nested discourse contexts. Analyze the provided tex
 - Challenges linear analysis assumptions
 
 ### Creative Compliance Test
-- Maintains v7.0 gasket architecture compliance
-- Uses standard target_keys array format
-- Follows raw analysis log requirements
-- Tests boundaries of acceptable framework complexity
+- Maintains v7.1 gasket architecture compliance with enhanced metadata scores
+- Uses advanced extraction patterns with flexible regex matching
+- Follows raw analysis log requirements with salience weighting
+- Tests boundaries of acceptable framework complexity with 24+ target keys
 
 ## Expected Behavior
 
@@ -170,4 +213,4 @@ You are an expert analyst of nested discourse contexts. Analyze the provided tex
 
 **System Architecture**: Tests whether gasket architecture can handle complex schemas without breaking, validates intelligent extractor's JSON parsing capabilities with deep nesting.
 
-This framework represents **creative compliance** - technically adhering to v7.0 specifications while pushing the boundaries of analytical complexity.
+This framework represents **creative compliance** - technically adhering to v7.1 specifications while pushing the boundaries of analytical complexity with enhanced metadata scoring and advanced extraction patterns.

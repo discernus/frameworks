@@ -1,8 +1,8 @@
-# Political Discourse Analysis Framework v6.0 - Populism Emergence Study
+# Political Discourse Analysis Framework v7.1 - Populism Emergence Study
 
-**Version**: 6.0  
+**Version**: 7.1  
 **Status**: Active  
-**Major Change**: Return to JSON Architecture with Enhanced Populism-Pluralism Analysis
+**Major Change**: Enhanced Gasket Schema with Metadata Scores and Advanced Extraction Patterns
 
 A specialized Discernus framework for analyzing the emergence and evolution of populist discourse in American presidential rhetoric. This framework employs a sophisticated two-axis model to capture the fundamental tensions in democratic political discourse: the vertical Populism↔Pluralism axis examining people versus institutions, and the horizontal Nationalism↔Patriotism axis examining ethnic versus civic identity.
 
@@ -75,17 +75,17 @@ This framework is optimized for temporal analysis of populist discourse emergenc
 
 ```json
 {
-  "name": "political_discourse_populism_v6",
-  "version": "v6.0",
-  "display_name": "Political Discourse Analysis Framework v6.0 - Populism Emergence Study",
+  "name": "political_discourse_populism_v7_1",
+  "version": "v7.1",
+  "display_name": "Political Discourse Analysis Framework v7.1 - Populism Emergence Study",
   "analysis_variants": {
     "default": {
-      "description": "Complete two-axis populism-pluralism analysis with enhanced linguistic markers.",
-      "analysis_prompt": "You are an expert analyst of political discourse with deep knowledge of populist rhetoric, democratic theory, and American political communication. Your task is to analyze the text using the Political Discourse Analysis Framework v6.0, which measures populist discourse emergence through two orthogonal axes. Analyze the POPULISM-PLURALISM AXIS (vertical): Score from 0.0 (pure pluralism) to 1.0 (pure populism). Look for populist markers: 'the people,' 'ordinary Americans,' 'establishment,' 'elites,' 'corrupt politicians,' 'us versus them,' 'will of the people,' 'rigged system,' 'common sense,' 'heartland.' Look for pluralist markers: 'democratic institutions,' 'evidence-based,' 'diverse perspectives,' 'expert analysis,' 'bipartisan cooperation,' 'constitutional process.' Analyze the NATIONALISM-PATRIOTISM AXIS (horizontal): Score from 0.0 (pure patriotism) to 1.0 (pure nationalism). Look for nationalist markers: 'American greatness,' 'our people,' 'real Americans,' 'traditional culture,' 'foreign influence,' 'cultural heritage,' 'exceptional nation.' Look for patriotic markers: 'Constitution,' 'Bill of Rights,' 'civic responsibility,' 'equal justice,' 'nation of immigrants,' 'democratic institutions.' Determine quadrant classification based on axis intersection. Provide strongest 1-2 quotes as evidence for each axis with confidence ratings. Your response must be a single, valid JSON object with the required nested structures. Provide ONLY raw axis scores and evidence - NO calculations or derived metrics."
+      "description": "Complete two-axis populism-pluralism analysis with raw analysis log output.",
+      "analysis_prompt": "Phase 1: Cognitive Priming: You are an expert analyst of political discourse with deep knowledge of populist rhetoric, democratic theory, and American political communication across diverse contexts. Phase 2: Framework Methodology: Your task is to analyze the text using the Political Discourse Analysis Framework v7.1, which measures populist discourse emergence through two orthogonal axes with enhanced metadata scoring. Phase 3: Operational Definitions: Evaluate the POPULISM-PLURALISM AXIS (0.0-1.0): populist markers ('the people,' 'establishment,' 'elites,' 'us versus them,' 'rigged system') versus pluralist markers ('democratic institutions,' 'evidence-based,' 'diverse perspectives,' 'bipartisan cooperation'). Evaluate the NATIONALISM-PATRIOTISM AXIS (0.0-1.0): nationalist markers ('American greatness,' 'real Americans,' 'traditional culture,' 'foreign influence') versus patriotic markers ('Constitution,' 'civic responsibility,' 'equal justice,' 'nation of immigrants'). Phase 4: Scoring Protocol: For each axis, provide ONLY: (1) score (0.0-1.0), (2) salience (0.0-1.0), (3) confidence (0.0-1.0), (4) evidence quotes with justification. Phase 5: Raw Analysis Log Requirements: Your response must be a raw analysis log containing axis scores, evidence, and reasoning - NO JSON structure or derived calculations. Phase 6: Output Specification: Return raw analysis log with axis scores only - NO quadrant calculations or derived metrics (these will be computed by code)."
     },
     "longitudinal_analysis": {
-      "description": "Specialized analysis for temporal populism evolution studies across presidential administrations.",
-      "analysis_prompt": "You are conducting longitudinal analysis of populist discourse evolution in American presidential rhetoric. Focus on temporal indicators of populist emergence, institutional critique patterns, and anti-elite sentiment development. Score both axes with attention to historical context and populist discourse evolution. Provide evidence that demonstrates populist rhetoric development or institutional democratic language. Return a single JSON object with required structures focusing on populism emergence patterns."
+      "description": "Specialized temporal analysis for populism evolution with raw analysis log output.",
+      "analysis_prompt": "Phase 1: Cognitive Priming: You are conducting longitudinal analysis of populist discourse evolution in American presidential rhetoric with expertise in temporal political communication patterns. Phase 2: Framework Methodology: Your task is to analyze populist discourse emergence using the Political Discourse Analysis Framework v7.1 with focus on temporal indicators. Phase 3: Operational Definitions: Focus on temporal indicators of populist emergence, institutional critique patterns, and anti-elite sentiment development across the two orthogonal axes. Phase 4: Scoring Protocol: Score both axes with attention to historical context and populist discourse evolution, providing scores, salience, and confidence with temporal evidence. Phase 5: Raw Analysis Log Requirements: Your response must be a raw analysis log focusing on populism emergence patterns - NO JSON structure or derived calculations. Phase 6: Output Specification: Return raw analysis log with axis scores only - NO quadrant calculations or longitudinal metrics (these will be computed by code)."
     }
   },
   "dimension_groups": {
@@ -97,9 +97,9 @@ This framework is optimized for temporal analysis of populist discourse emergenc
   "calculation_spec": {
     "populism_pluralism_score": "Vertical axis score measuring populist versus pluralist discourse (0.0 = pure pluralism, 1.0 = pure populism)",
     "nationalism_patriotism_score": "Horizontal axis score measuring nationalist versus patriotic discourse (0.0 = pure patriotism, 1.0 = pure nationalism)",
-    "populist_intensity_index": "Combined measure of populist discourse strength: (populism_pluralism_score * 0.7) + (nationalism_patriotism_score * 0.3)",
-    "democratic_institutionalism_index": "Combined measure of democratic institutional respect: ((1 - populism_pluralism_score) * 0.7) + ((1 - nationalism_patriotism_score) * 0.3)",
-    "quadrant_classification": "Four-quadrant typology based on axis intersection thresholds"
+    "populist_intensity_index": "(populism_pluralism_axis_score * 0.7) + (nationalism_patriotism_axis_score * 0.3)",
+    "democratic_institutionalism_index": "((1 - populism_pluralism_axis_score) * 0.7) + ((1 - nationalism_patriotism_axis_score) * 0.3)",
+    "quadrant_classification": "Determine based on axis thresholds: High Populism + High Nationalism (0.7+ both), Civic Populist (0.7+ vertical, 0.3- horizontal), Elite Nationalist (0.3- vertical, 0.7+ horizontal), Liberal Democratic (0.3- both)"
   },
   "reliability_rubric": {
     "cronbachs_alpha": {
@@ -110,68 +110,40 @@ This framework is optimized for temporal analysis of populist discourse emergenc
     },
     "notes": "Defines quality thresholds for framework reliability in longitudinal populism studies."
   },
-  "output_contract": {
-    "schema": {
-      "worldview": "string",
-      "scores": "object",
-      "evidence": "object", 
-      "reasoning": "object",
-      "axis_analysis": "object",
-      "quadrant_classification": "string"
+  "gasket_schema": {
+    "version": "7.1",
+    "extraction_method": "intelligent_extractor",
+    "target_keys": [
+      "populism_pluralism_axis_score",
+      "nationalism_patriotism_axis_score",
+      "populism_pluralism_axis_salience",
+      "nationalism_patriotism_axis_salience",
+      "populism_pluralism_axis_confidence",
+      "nationalism_patriotism_axis_confidence"
+    ],
+    "extraction_patterns": {
+      "populism_pluralism_axis_score": ["populism.{0,20}pluralism.{0,20}axis.{0,20}score", "populism.{0,20}axis.{0,20}score", "vertical.{0,20}axis.{0,20}score"],
+      "nationalism_patriotism_axis_score": ["nationalism.{0,20}patriotism.{0,20}axis.{0,20}score", "nationalism.{0,20}axis.{0,20}score", "horizontal.{0,20}axis.{0,20}score"],
+      "populism_pluralism_axis_salience": ["populism.{0,20}pluralism.{0,20}axis.{0,20}salience", "populism.{0,20}axis.{0,20}salience", "vertical.{0,20}axis.{0,20}salience"],
+      "nationalism_patriotism_axis_salience": ["nationalism.{0,20}patriotism.{0,20}axis.{0,20}salience", "nationalism.{0,20}axis.{0,20}salience", "horizontal.{0,20}axis.{0,20}salience"],
+      "populism_pluralism_axis_confidence": ["populism.{0,20}pluralism.{0,20}axis.{0,20}confidence", "populism.{0,20}axis.{0,20}confidence", "vertical.{0,20}axis.{0,20}confidence"],
+      "nationalism_patriotism_axis_confidence": ["nationalism.{0,20}patriotism.{0,20}axis.{0,20}confidence", "nationalism.{0,20}axis.{0,20}confidence", "horizontal.{0,20}axis.{0,20}confidence"]
     },
-    "structured_data_requirements": {
-      "scores": {
-        "description": "Nested object containing ONLY raw axis scores (NO calculated metrics)",
-        "structure": {
-          "dimensions": {
-            "populism_pluralism_axis": {
-              "score": "number (0.0-1.0)",
-              "salience": "number (0.0-1.0)",
-              "confidence": "number (0.0-1.0)"
-            },
-            "nationalism_patriotism_axis": {
-              "score": "number (0.0-1.0)",
-              "salience": "number (0.0-1.0)",
-              "confidence": "number (0.0-1.0)"
-            }
-          },
-          "metadata": {
-            "total_dimensions": "number",
-            "analysis_completeness": "number (0.0-1.0)"
-          }
-        }
+    "validation_rules": {
+      "required_fields": [
+        "populism_pluralism_axis_score", "nationalism_patriotism_axis_score"
+      ],
+      "score_ranges": {"min": 0.0, "max": 1.0},
+      "metadata_ranges": {
+        "salience": {"min": 0.0, "max": 1.0},
+        "confidence": {"min": 0.0, "max": 1.0}
       },
-      "evidence": {
-        "description": "Nested object containing structured evidence data for populism discourse analysis",
-        "structure": {
-          "by_dimension": {
-            "populism_pluralism_axis": [
-              {
-                "quote_id": "string",
-                "quote_text": "string", 
-                "confidence": "number (0.0-1.0)",
-                "context_type": "string",
-                "discourse_marker_type": "string"
-              }
-            ],
-            "nationalism_patriotism_axis": [
-              {
-                "quote_id": "string",
-                "quote_text": "string", 
-                "confidence": "number (0.0-1.0)",
-                "context_type": "string",
-                "discourse_marker_type": "string"
-              }
-            ]
-          },
-          "metadata": {
-            "total_quotes": "number",
-            "average_confidence": "number"
-          }
-        }
-      }
-    },
-    "instructions": "IMPORTANT: Your response MUST be a single, valid JSON object containing all required fields with the nested structures specified above. Score the populism_pluralism_axis from 0.0 (pure pluralism) to 1.0 (pure populism). Score the nationalism_patriotism_axis from 0.0 (pure patriotism) to 1.0 (pure nationalism). Include salience and confidence for each axis. Provide 1-2 strongest quotes as evidence for each axis with discourse marker classification. DO NOT perform any mathematical calculations or compute derived metrics - provide ONLY raw axis scores, salience, confidence, and evidence."
+      "fallback_strategy": "use_default_values"
+    }
+  },
+  "raw_analysis_log_format": {
+    "description": "Raw analysis log containing axis scores, evidence, and reasoning without structured JSON",
+    "content": "Free-form text with populism-pluralism analysis including scores, evidence quotes, and qualitative reasoning"
   }
 }
 ```
