@@ -343,12 +343,16 @@ Evaluation of discourse's contribution to social fabric and democratic resilienc
       "fragmentative_goals_score", "cohesive_goals_score", "fragmentative_goals_salience", "cohesive_goals_salience", "fragmentative_goals_confidence", "cohesive_goals_confidence"
     ],
     "extraction_patterns": {
-      "tribal_dominance_score": ["tribal.*?dominance.*?score.*?([0-9]\\.[0-9])", "tribal.*?dominance.*?([0-9]\\.[0-9])", "dominance\\s*:\\s*([0-9]\\.[0-9])"],
-      "individual_dignity_score": ["individual.*?dignity.*?score.*?([0-9]\\.[0-9])", "individual.*?dignity.*?([0-9]\\.[0-9])", "dignity\\s*:\\s*([0-9]\\.[0-9])"],
-      "fear_score": ["fear.*?score.*?([0-9]\\.[0-9])", "fear.*?([0-9]\\.[0-9])", "fear\\s*:\\s*([0-9]\\.[0-9])"],
-      "hope_score": ["hope.*?score.*?([0-9]\\.[0-9])", "hope.*?([0-9]\\.[0-9])", "hope\\s*:\\s*([0-9]\\.[0-9])"],
-      "envy_score": ["envy.*?score.*?([0-9]\\.[0-9])", "envy.*?([0-9]\\.[0-9])", "envy\\s*:\\s*([0-9]\\.[0-9])"],
-      "compersion_score": ["compersion.*?score.*?([0-9]\\.[0-9])", "compersion.*?([0-9]\\.[0-9])", "compersion\\s*:\\s*([0-9]\\.[0-9])"]
+      "tribal_dominance_score": ["tribal.{0,20}dominance.{0,20}score.{0,20}([0-9]\\.[0-9])", "tribal.{0,20}dominance.{0,20}([0-9]\\.[0-9])", "dominance\\s*:\\s*([0-9]\\.[0-9])"],
+      "individual_dignity_score": ["individual.{0,20}dignity.{0,20}score.{0,20}([0-9]\\.[0-9])", "individual.{0,20}dignity.{0,20}([0-9]\\.[0-9])", "dignity\\s*:\\s*([0-9]\\.[0-9])"],
+      "fear_score": ["fear.{0,20}score.{0,20}([0-9]\\.[0-9])", "fear.{0,20}([0-9]\\.[0-9])", "fear\\s*:\\s*([0-9]\\.[0-9])"],
+      "hope_score": ["hope.{0,20}score.{0,20}([0-9]\\.[0-9])", "hope.{0,20}([0-9]\\.[0-9])", "hope\\s*:\\s*([0-9]\\.[0-9])"],
+      "envy_score": ["envy.{0,20}score.{0,20}([0-9]\\.[0-9])", "envy.{0,20}([0-9]\\.[0-9])", "envy\\s*:\\s*([0-9]\\.[0-9])"],
+      "compersion_score": ["compersion.{0,20}score.{0,20}([0-9]\\.[0-9])", "compersion.{0,20}([0-9]\\.[0-9])", "compersion\\s*:\\s*([0-9]\\.[0-9])"],
+      "enmity_score": ["enmity.{0,20}score.{0,20}([0-9]\\.[0-9])", "enmity.{0,20}([0-9]\\.[0-9])", "enmity\\s*:\\s*([0-9]\\.[0-9])"],
+      "amity_score": ["amity.{0,20}score.{0,20}([0-9]\\.[0-9])", "amity.{0,20}([0-9]\\.[0-9])", "amity\\s*:\\s*([0-9]\\.[0-9])"],
+      "fragmentative_goals_score": ["fragmentative.{0,20}goals.{0,20}score.{0,20}([0-9]\\.[0-9])", "fragmentative.{0,20}goals.{0,20}([0-9]\\.[0-9])", "fragmentative_goals\\s*:\\s*([0-9]\\.[0-9])"],
+      "cohesive_goals_score": ["cohesive.{0,20}goals.{0,20}score.{0,20}([0-9]\\.[0-9])", "cohesive.{0,20}goals.{0,20}([0-9]\\.[0-9])", "cohesive_goals\\s*:\\s*([0-9]\\.[0-9])"]
     },
     "validation_rules": {
       "required_fields": [
