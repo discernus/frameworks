@@ -370,7 +370,8 @@ Evaluation of discourse's contribution to social fabric and democratic resilienc
     },
     "validation_rules": {
       "required_fields": [
-        "tribal_dominance_score", "individual_dignity_score", "fear_score", "hope_score", "envy_score", "compersion_score", "enmity_score", "amity_score", "fragmentative_goals_score", "cohesive_goals_score"
+        "tribal_dominance_score", "individual_dignity_score", "fear_score", "hope_score", "envy_score", "compersion_score", "enmity_score", "amity_score", "fragmentative_goals_score", "cohesive_goals_score",
+        "tribal_dominance_salience", "individual_dignity_salience", "fear_salience", "hope_salience", "envy_salience", "compersion_salience", "enmity_salience", "amity_salience", "fragmentative_goals_salience", "cohesive_goals_salience"
       ],
       "score_ranges": {"min": 0.0, "max": 1.0},
       "metadata_ranges": {
