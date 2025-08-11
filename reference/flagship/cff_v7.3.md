@@ -245,11 +245,11 @@ Evaluation of discourse's contribution to social fabric and democratic resilienc
     }
   },
   "dimension_groups": {
-    "identity_axis": ["tribal_dominance", "individual_dignity"],
-    "emotional_climate_axis": ["fear", "hope"],
-    "success_orientation_axis": ["envy", "compersion"],
-    "relational_climate_axis": ["enmity", "amity"],
-    "goal_orientation_axis": ["fragmentative_goals", "cohesive_goals"]
+    "identity_axis": ["tribal_dominance_score", "individual_dignity_score"],
+    "emotional_climate_axis": ["fear_score", "hope_score"],
+    "success_orientation_axis": ["envy_score", "compersion_score"],
+    "relational_climate_axis": ["enmity_score", "amity_score"],
+    "goal_orientation_axis": ["fragmentative_goals_score", "cohesive_goals_score"]
   },
 
   "calculation_spec": {
@@ -325,7 +325,14 @@ Evaluation of discourse's contribution to social fabric and democratic resilienc
       "poor": [0.0, 0.59]
     },
     "notes": "Defines quality thresholds for framework reliability. The Synthesis Agent uses this for automated fit assessment."
-  },
+  }
+}
+```
+
+</details>
+
+<GASKET_SCHEMA_START>
+{
   "gasket_schema": {
     "version": "v7.3",
     "extraction_method": "intelligent_extractor",
@@ -382,6 +389,4 @@ Evaluation of discourse's contribution to social fabric and democratic resilienc
     }
   }
 }
-```
-
-</details>
+<GASKET_SCHEMA_END>

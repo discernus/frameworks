@@ -304,7 +304,13 @@ Evaluation of discourse's contribution to democratic health and civic culture
       "final_integration": "Calculated metrics, pattern classifications, and civic character assessment"
     },
     "instructions": "Follow the sequential analysis format exactly. Each step must include specific textual evidence, numerical scores (0.0-1.0), salience assessment, and confidence rating. Final integration must calculate all tension scores and apply pattern classifications."
-  },
+  }
+}
+```
+
+</details>
+<GASKET_SCHEMA_START>
+{
   "gasket_schema": {
     "version": "v7.3",
     "extraction_method": "intelligent_extractor",
@@ -362,6 +368,4 @@ Evaluation of discourse's contribution to democratic health and civic culture
     }
   }
 }
-```
-
-</details>
+<GASKET_SCHEMA_END>
