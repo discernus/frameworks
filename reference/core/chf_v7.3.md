@@ -250,7 +250,14 @@ Assessment of discourse's contribution to constitutional health and democratic s
       "poor": [0.0, 0.59]
     },
     "notes": "Defines quality thresholds for framework reliability. The Synthesis Agent uses this for automated fit assessment."
-  },
+  }
+}
+```
+
+</details>
+
+<GASKET_SCHEMA_START>
+{
   "gasket_schema": {
     "version": "v7.3",
     "extraction_method": "intelligent_extractor",
@@ -262,10 +269,22 @@ Assessment of discourse's contribution to constitutional health and democratic s
     "extraction_patterns": {
       "procedural_legitimacy_score": ["procedural.*?legitimacy.*?score.*?([0-9]\\.[0-9])", "procedural.*?legitimacy.*?([0-9]\\.[0-9])", "legitimacy\\s*:\\s*([0-9]\\.[0-9])"],
       "procedural_rejection_score": ["procedural.*?rejection.*?score.*?([0-9]\\.[0-9])", "procedural.*?rejection.*?([0-9]\\.[0-9])", "rejection\\s*:\\s*([0-9]\\.[0-9])"],
+      "procedural_legitimacy_salience": ["procedural.*?legitimacy.*?salience.*?([0-9]\\.[0-9])", "legitimacy.*?salience.*?([0-9]\\.[0-9])", "salience.*?legitimacy.*?([0-9]\\.[0-9])"],
+      "procedural_rejection_salience": ["procedural.*?rejection.*?salience.*?([0-9]\\.[0-9])", "rejection.*?salience.*?([0-9]\\.[0-9])", "salience.*?rejection.*?([0-9]\\.[0-9])"],
+      "procedural_legitimacy_confidence": ["procedural.*?legitimacy.*?confidence.*?([0-9]\\.[0-9])", "legitimacy.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?legitimacy.*?([0-9]\\.[0-9])"],
+      "procedural_rejection_confidence": ["procedural.*?rejection.*?confidence.*?([0-9]\\.[0-9])", "rejection.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?rejection.*?([0-9]\\.[0-9])"],
       "institutional_respect_score": ["institutional.*?respect.*?score.*?([0-9]\\.[0-9])", "institutional.*?respect.*?([0-9]\\.[0-9])", "respect\\s*:\\s*([0-9]\\.[0-9])"],
       "institutional_subversion_score": ["institutional.*?subversion.*?score.*?([0-9]\\.[0-9])", "institutional.*?subversion.*?([0-9]\\.[0-9])", "subversion\\s*:\\s*([0-9]\\.[0-9])"],
+      "institutional_respect_salience": ["institutional.*?respect.*?salience.*?([0-9]\\.[0-9])", "respect.*?salience.*?([0-9]\\.[0-9])", "salience.*?respect.*?([0-9]\\.[0-9])"],
+      "institutional_subversion_salience": ["institutional.*?subversion.*?salience.*?([0-9]\\.[0-9])", "subversion.*?salience.*?([0-9]\\.[0-9])", "salience.*?subversion.*?([0-9]\\.[0-9])"],
+      "institutional_respect_confidence": ["institutional.*?respect.*?confidence.*?([0-9]\\.[0-9])", "respect.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?respect.*?([0-9]\\.[0-9])"],
+      "institutional_subversion_confidence": ["institutional.*?subversion.*?confidence.*?([0-9]\\.[0-9])", "subversion.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?subversion.*?([0-9]\\.[0-9])"],
       "systemic_continuity_score": ["systemic.*?continuity.*?score.*?([0-9]\\.[0-9])", "systemic.*?continuity.*?([0-9]\\.[0-9])", "continuity\\s*:\\s*([0-9]\\.[0-9])"],
-      "systemic_replacement_score": ["systemic.*?replacement.*?score.*?([0-9]\\.[0-9])", "systemic.*?replacement.*?([0-9]\\.[0-9])", "replacement\\s*:\\s*([0-9]\\.[0-9])"]
+      "systemic_replacement_score": ["systemic.*?replacement.*?score.*?([0-9]\\.[0-9])", "systemic.*?replacement.*?([0-9]\\.[0-9])", "replacement\\s*:\\s*([0-9]\\.[0-9])"],
+      "systemic_continuity_salience": ["systemic.*?continuity.*?salience.*?([0-9]\\.[0-9])", "continuity.*?salience.*?([0-9]\\.[0-9])", "salience.*?continuity.*?([0-9]\\.[0-9])"],
+      "systemic_replacement_salience": ["systemic.*?replacement.*?salience.*?([0-9]\\.[0-9])", "replacement.*?salience.*?([0-9]\\.[0-9])", "salience.*?replacement.*?([0-9]\\.[0-9])"],
+      "systemic_continuity_confidence": ["systemic.*?continuity.*?confidence.*?([0-9]\\.[0-9])", "continuity.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?continuity.*?([0-9]\\.[0-9])"],
+      "systemic_replacement_confidence": ["systemic.*?replacement.*?confidence.*?([0-9]\\.[0-9])", "replacement.*?confidence.*?([0-9]\\.[0-9])", "confidence.*?replacement.*?([0-9]\\.[0-9])"]
     },
     "validation_rules": {
       "required_fields": [
@@ -281,6 +300,4 @@ Assessment of discourse's contribution to constitutional health and democratic s
     }
   }
 }
-```
-
-</details>
+<GASKET_SCHEMA_END>

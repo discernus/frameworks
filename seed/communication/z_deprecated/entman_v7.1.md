@@ -111,37 +111,27 @@ The analysis agent outputs a raw analysis log containing:
       "poor": [0.0, 0.59]
     },
     "notes": "Defines quality thresholds for framework reliability. The Synthesis Agent uses this for automated fit assessment."
-  },
+  }
+}
+```
+
+</details>
+
+<GASKET_SCHEMA_START>
+{
   "gasket_schema": {
-    "version": "v7.3",
+    "version": "v7.1",
     "extraction_method": "intelligent_extractor",
     "target_keys": [
-      "problem_definition_score",
-      "causal_attribution_score",
-      "moral_evaluation_score",
-      "treatment_recommendation_score",
-      "problem_definition_salience",
-      "causal_attribution_salience",
-      "moral_evaluation_salience",
-      "treatment_recommendation_salience",
-      "problem_definition_confidence",
-      "causal_attribution_confidence",
-      "moral_evaluation_confidence",
-      "treatment_recommendation_confidence"
+      "problem_definition_score", "causal_attribution_score", "moral_evaluation_score", "treatment_recommendation_score",
+      "problem_definition_salience", "causal_attribution_salience", "moral_evaluation_salience", "treatment_recommendation_salience",
+      "problem_definition_confidence", "causal_attribution_confidence", "moral_evaluation_confidence", "treatment_recommendation_confidence"
     ],
     "extraction_patterns": {
       "problem_definition_score": ["problem.{0,20}definition.{0,20}score", "problem.{0,20}definition.{0,20}rating", "problem\\s*definition\\s*:\\s*[0-9]"],
       "causal_attribution_score": ["causal.{0,20}attribution.{0,20}score", "causal.{0,20}attribution.{0,20}rating", "causal\\s*attribution\\s*:\\s*[0-9]"],
       "moral_evaluation_score": ["moral.{0,20}evaluation.{0,20}score", "moral.{0,20}evaluation.{0,20}rating", "moral\\s*evaluation\\s*:\\s*[0-9]"],
-      "treatment_recommendation_score": ["treatment.{0,20}recommendation.{0,20}score", "treatment.{0,20}recommendation.{0,20}rating", "treatment\\s*recommendation\\s*:\\s*[0-9]"],
-      "problem_definition_salience": ["problem.{0,20}definition.{0,20}salience", "problem.{0,20}definition.{0,20}importance", "problem.{0,20}definition.{0,20}centrality"],
-      "causal_attribution_salience": ["causal.{0,20}attribution.{0,20}salience", "causal.{0,20}attribution.{0,20}importance", "causal.{0,20}attribution.{0,20}centrality"],
-      "moral_evaluation_salience": ["moral.{0,20}evaluation.{0,20}salience", "moral.{0,20}evaluation.{0,20}importance", "moral.{0,20}evaluation.{0,20}centrality"],
-      "treatment_recommendation_salience": ["treatment.{0,20}recommendation.{0,20}salience", "treatment.{0,20}recommendation.{0,20}importance", "treatment.{0,20}recommendation.{0,20}centrality"],
-      "problem_definition_confidence": ["problem.{0,20}definition.{0,20}confidence", "problem.{0,20}definition.{0,20}certainty", "problem.{0,20}definition.{0,20}sure"],
-      "causal_attribution_confidence": ["causal.{0,20}attribution.{0,20}confidence", "causal.{0,20}attribution.{0,20}certainty", "causal.{0,20}attribution.{0,20}sure"],
-      "moral_evaluation_confidence": ["moral.{0,20}evaluation.{0,20}confidence", "moral.{0,20}evaluation.{0,20}certainty", "moral.{0,20}evaluation.{0,20}sure"],
-      "treatment_recommendation_confidence": ["treatment.{0,20}recommendation.{0,20}confidence", "treatment.{0,20}recommendation.{0,20}certainty", "treatment.{0,20}recommendation.{0,20}sure"]
+      "treatment_recommendation_score": ["treatment.{0,20}recommendation.{0,20}score", "treatment.{0,20}recommendation.{0,20}rating", "treatment\\s*recommendation\\s*:\\s*[0-9]"]
     },
     "validation_rules": {
       "required_fields": [
@@ -156,6 +146,4 @@ The analysis agent outputs a raw analysis log containing:
     }
   }
 }
-```
-
-</details>
+<GASKET_SCHEMA_END>
